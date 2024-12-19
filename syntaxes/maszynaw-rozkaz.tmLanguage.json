@@ -1,0 +1,67 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "maszynaw-rozkaz",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#signals-level"
+		},
+		{
+			"include": "#signals-edge"
+		},
+		{
+			"include": "#conditions"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#fallback"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.double-slash.maszynaw",
+				"match": "//.*$"
+			}]
+		},
+		"signals-level": {
+			"patterns": [{
+				"name": "entity.name.function.maszynaw",
+				"match": "(?i)\\b(czyt|wys|pisz|weja|przep|ode|dod|wyak|wyad|wyl|as|sa|wyws)\\b"
+			}]
+		},
+		"signals-edge": {
+			"patterns": [{
+				"name": "entity.name.class.maszynaw",
+				"match": "(?i)\\b(wei|wes|weak|wel|wea|il|wews|iws|dws)\\b"
+			}]
+		},
+		"conditions": {
+			"patterns": [{
+				"name": "keyword.control.maszynaw",
+				"match": "(?i)\\b(jeżeli|to|inaczej|gdy|nie|koniec|rozkaz)\\b"
+			}]
+		},
+		"labels": {
+			"patterns": [{
+				"match": "\\s*@(\\w+)\\s*",
+				"captures": {
+					"1": {
+						"name": "entity.name.tag.maszynaw"
+					}
+				}
+			}]
+		},
+		"fallback": {
+			"patterns": [{
+				"name": "variable.other.maszynaw",
+				"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+			}]
+		}
+	},
+	"scopeName": "source.maszynaw-rozkaz"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "maszyna-w",
+  "displayName": "Maszyna W",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "maszynaw",
+      "aliases": ["maszynaw", "maszyna w"],
+      "extensions": [".prg"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./images/1.ico",
+        "dark": "./images/1.ico"
+      }
+    },
+    {
+      "id": "maszynaw-rozkaz",
+      "aliases": ["maszynaw-rozkaz", "maszyna w rozkaz"],
+      "extensions": [".rzk"],
+      "configuration": "./language-rozkaz-configuration.json",
+      "icon": {
+        "light": "./images/1.ico",
+        "dark": "./images/1.ico"
+      }
+    }],
+    "grammars": [{
+      "language": "maszynaw",
+      "scopeName": "source.maszynaw",
+      "path": "./syntaxes/maszynaw.tmLanguage.json"
+    },
+    {
+      "language": "maszynaw-rozkaz",
+      "scopeName": "source.maszynaw-rozkaz",
+      "path": "./syntaxes/maszynaw-rozkaz.tmLanguage.json"
+    }],
+    "icons": {
+      "my-icon-id": {
+        "description": "my icon",
+        "default": {
+          "fontPath": "myiconfont.woff",
+          "fontCharacter": "\\E001",
+          "iconPath": "./images/1.ico"
+        }
+      }
+    }
+  },
+  "main": "./src/extension.js"
+}

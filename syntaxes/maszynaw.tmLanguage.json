@@ -1,0 +1,82 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "maszynaw",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#instructions"
+		},
+		{
+			"include": "#fallback"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.double-slash.maszynaw",
+				"match": "//.*$"
+			},
+			{
+				"name": "comment.line.character.maszynaw",
+				"match": ";.*$"
+			}]
+		},
+		"constants": {
+			"patterns": [{
+				"name": "constant.numeric.maszynaw",
+				"match": "\\b[0-9]+\\b"
+			},
+			{
+				"name": "string.quoted.single.maszynaw",
+				"begin": "'",
+				"end": "'",
+				"patterns": [{
+					"name": "constant.character.escape.maszynaw",
+					"match": "\\\\."
+				}]
+			}]
+		},
+		"instructions": {
+			"patterns": [{
+				"name": "entity.name.function.maszynaw",
+				"match": "(?i)\\b(STP|DOD|ODE|POB|ŁAD|LAD|SOB|SOM|SOZ|RPA|RST|DNS|PZS|SDP|PWR|WPR|WYP|MAS|MSK|CZM)\\b"
+			}]
+		},
+		"labels": {
+			"patterns": [{
+				"match": "\\s*(\\w+):\\s*",
+				"captures": {
+					"1": {
+						"name": "entity.name.tag.maszynaw"
+					}
+				}
+			}]
+		},
+		"fallback": {
+			"patterns": [{
+				"name": "variable.other.maszynaw",
+				"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.single.maszynaw",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.maszynaw",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.maszynaw"
+}
